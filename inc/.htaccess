@@ -1,0 +1,8 @@
+Order deny,allow
+Deny from all
+
+<Files "loader-wizard.php">
+Allow from all
+Satisfy Any
+
+</Files>

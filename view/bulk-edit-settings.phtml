@@ -1,0 +1,105 @@
+﻿<fieldset class="inline-edit-col-right listbuilder-plugin-quick">
+	<div class="inline-edit-col">
+		<div class="inline-edit-group wp-clearfix">
+			<label class="inline-edit-status alignleft">
+				<span class="title"><?php _e('Plugin aktivieren', 'comment-list-builder'); ?></span>
+				<select name="listbuilder-plugin-active" <?php if($no_licence == true){ echo "disabled"; }?>>
+			        <option value="nochange">
+			            <?php _e('&mdash; No Change &mdash;'); ?>
+			        </option>
+			        <option value="">
+			            <?php _e('>> Nicht aktiv <<', 'comment-list-builder'); ?>
+			        </option>
+			        <option value="default">
+			            <?php _e('Default', 'comment-list-builder'); ?>
+			        </option>
+			        <option value="klicktipp">
+			            <?php _e('Klick-Tipp via API', 'comment-list-builder'); ?>
+			        </option>
+			        <option value="autoresponder">
+			            <?php _e('Senden via HTML Code', 'comment-list-builder'); ?>
+			        </option>
+			    </select>
+			    <button class="button button-primary button-large" id="load_default"><?php _e('Load Default', 'comment-list-builder'); ?></button>
+			</label>
+		</div>
+	</div>
+	<div class="klicktipp">
+		<div class="inline-edit-col">	
+			<label>
+				<span class="title"><?php _e('Klick-Tipp OptIn-ID', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><input type="number" name="klicktippOptInID"  <?php if($no_licence == true){ echo "disabled"; }?>><span class="optin_name"></span></span>			
+			</label>
+		</div>
+		<div class="inline-edit-col">
+			<label>
+				<span class="title"><?php _e('Klick-Tipp Tag', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><input type="text" name="klicktippTag" <?php if($no_licence == true){ echo "disabled"; }?>><span class="tag_id"></span></span>
+			</label>
+		</div>
+	</div>
+	<div class="autoresponder">
+		<div class="inline-edit-col">	
+			<label>
+				<span class="title"><?php _e('HTML Eintragungscode', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><textarea rows="10" cols="30" id="ar_code" name="ar_code" <?php if($no_licence == true){ echo "disabled"; }?>></textarea><div id="arcode_hdn_div"></div><div id="arcode_hdn_div2"></div><small><?php echo sprintf(__('Bitte füge hier nur HTML Formulare ein, kein Code mit iframe. Je einfach der Code desto besser.<br /><a href="%s" target="_blank">Hier</a> geht es zum Tutorial für die Erstellung deines Anmeldeformular Codes.', 'comment-list-builder'), 'http://woocommerce-klick-tipp.com/?p=1722' . $this->getAffiliateParameterString()); ?></small></span>			
+			</label>
+		</div>
+		<div class="inline-edit-col">
+			<label>
+				<span class="title"><?php _e('URL', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><input type="text" id="ar_url" name="ar_url" <?php if($no_licence == true){ echo "disabled"; }?>><small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small></span>
+			</label>
+		</div>
+		<div class="inline-edit-col">
+			<label>
+				<span class="title"><?php _e('Namen', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><input type="text" id="ar_name" name="ar_name" <?php if($no_licence == true){ echo "disabled"; }?>><small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small></span>
+			</label>
+		</div>
+		<div class="inline-edit-col">
+			<label>
+				<span class="title"><?php _e('E-Mail Feld', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><input type="text" id="ar_email" name="ar_email" <?php if($no_licence == true){ echo "disabled"; }?>><small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small></span>
+			</label>
+		</div>
+		<div class="inline-edit-col">	
+			<label>
+				<span class="title"><?php _e('Nicht sichtbare Formularfelder', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><textarea rows="10" cols="30" id="ar_hidden" name="ar_hidden" <?php if($no_licence == true){ echo "disabled"; }?>></textarea><small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small></span>			
+			</label>
+		</div>
+	</div>
+	<div class="general_settings">
+		<div class="inline-edit-col">
+			<label>
+				<span class="title"><?php _e('Zusatztext', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><textarea rows="10" cols="30" name="klicktippAdditionalText" <?php if($no_licence == true){ echo "disabled"; }?>></textarea></span>
+			</label>
+		</div>
+		<div class="inline-edit-col">
+			<label>
+				<span class="title"><?php _e('Beschreibungstext der Tickbox', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><input type="text" name="klicktippCheckboxText" <?php if($no_licence == true){ echo "disabled"; }?>></span>
+			</label>
+		</div>
+		<div class="inline-edit-col">
+			<label>
+				<span class="title"><?php _e('Tickbox vorausgewählt', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><input type="checkbox" value="TRUE" name="klicktippCheckboxChecked" <?php if($no_licence == true){ echo "disabled"; }?>></span>
+			</label>
+		</div>
+		<div class="inline-edit-col">
+			<label>
+				<span class="title"><?php _e('Kontakt ohne Genehmigung des Kommentars zu Klick-Tipp übertragen', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><input type="checkbox" value="TRUE" name="klicktippAddSubscriberWithoutRelease" <?php if($no_licence == true){ echo "disabled"; }?>></span>
+			</label>
+		</div>
+		<div class="inline-edit-col">
+			<label>
+				<span class="title"><?php _e('Link zum Datenschutz', 'comment-list-builder'); ?></span>
+				<span class="input-text-wrap"><input type="text" name="privacy-url" <?php if($no_licence == true){ echo "disabled"; }?>></span>
+			</label>
+		</div>
+	</div>
+</fieldset>

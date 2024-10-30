@@ -1,0 +1,13 @@
+th#listbuilder-options, #wpcontent td.listbuilder-options, tfoot th.column-listbuilder-options {
+  display: none !important;
+}
+.inline-edit-row fieldset.listbuilder-plugin-quick label span.input-text-wrap {
+	margin-left: 0;
+}
+.quick-edit-row-post fieldset.listbuilder-plugin-quick label span.title {
+	display: block;
+	float: none;
+}
+.inline-edit-row fieldset.listbuilder-plugin-quick label span.title {
+	width: 100%;
+}

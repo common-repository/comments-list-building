@@ -1,0 +1,58 @@
+<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+    <h3><?php _e('Autoresponders Optionen', 'comment-list-builder'); ?></h3>
+    <table class="form-table">
+        <tbody>
+            <tr>
+                <th scope="row">
+                    <?php _e('HTML Eintragungscode', 'comment-list-builder'); ?>
+                </th>
+                <td>
+                    <textarea class="large-text" rows="10" cols="30" id="ar_code" name="ar_code"><?php if (array_key_exists('autoresponderCode', $aOptions)) { echo stripslashes($aOptions['autoresponderCode']); } ?></textarea>
+                    <div id="arcode_hdn_div"></div>
+                    <div id="arcode_hdn_div2"></div>
+                    <small><?php echo sprintf(__('Bitte füge hier nur HTML Formulare ein, kein Code mit iframe. Je einfach der Code desto besser.<br /><a href="%s" target="_blank">Hier</a> geht es zum Tutorial für die Erstellung deines Anmeldeformular Codes.', 'comment-list-builder'), 'http://woocommerce-klick-tipp.com/?p=1722' . $this->getAffiliateParameterString()); ?></small>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <?php _e('URL', 'comment-list-builder'); ?>
+                </th>
+                <td>
+                    <input type="text" value="<?php if (array_key_exists('autoresponderUrl', $aOptions)) { echo stripslashes($aOptions['autoresponderUrl']); } ?>" class="large-text" id="ar_url" name="ar_url"><br>
+                    <small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <?php _e('Namen', 'comment-list-builder'); ?>
+                </th>
+                <td>
+                    <input type="text" value="<?php if (array_key_exists('autoresponderName', $aOptions)) { echo stripslashes($aOptions['autoresponderName']); } ?>" class="regular-text" id="ar_name" name="ar_name"><br>
+                    <small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <?php _e('E-Mail Feld', 'comment-list-builder'); ?>
+                </th>
+                <td>
+                    <input type="text" value="<?php if (array_key_exists('autoresponderEmail', $aOptions)) { echo stripslashes($aOptions['autoresponderEmail']); } ?>" class="regular-text" id="ar_email" name="ar_email"><br>
+                    <small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <?php _e('Nicht sichtbare Formularfelder', 'comment-list-builder'); ?>
+                </th>
+                <td>
+                    <textarea class="large-text" rows="10" cols="30" id="ar_hidden" name="ar_hidden"><?php if (array_key_exists('autoresponderHidden', $aOptions)) { echo stripslashes($aOptions['autoresponderHidden']); } ?></textarea><br>
+                    <small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="submit">
+        <input type="submit" value="Save Settings" class="button button-primary" id="submit-others" name="submit-save">
+        <input type="submit" value="<?php _e('Reset', 'comment-list-builder'); ?>" class="button" id="reset-others" name="submit-reset">
+    </p>
+</form>

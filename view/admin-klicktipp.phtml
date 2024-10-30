@@ -1,0 +1,59 @@
+<div class="container clearfix">
+    <div class="col-fifty-fifty">
+        <form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+            <h3><?php _e('Einstellungen in Klick-Tipp', 'comment-list-builder'); ?></h3>
+            <table class="form-table">
+                <tr>
+                    <th scope="row">
+                        <label for="api"><?php _e('API', 'comment-list-builder'); ?></label>
+                    </th>
+                    <td>
+                        <select name="account-api">
+                            <?php foreach($selectApiValues AS $key => $apiValue) : ?>
+                                <option value="<?php echo $key; ?>" <?php echo $apiValue->selected; ?>>
+                                    <?php echo $apiValue->name; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;"><?php _e('Klick-Tipp Benutzer', 'comment-list-builder'); ?>:</th>
+                    <td colspan="2"><input type="text" name="klicktippUser" style="width: 80%;" value="<?php print (!empty($aOptions['klicktippUser'])) ? $aOptions['klicktippUser'] : ""; ?>" /></td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;"><?php _e('Klick-Tipp Kennwort', 'comment-list-builder'); ?>:</th>
+                    <td colspan="2"><input type="password" name="klicktippPassword" style="width: 80%;" value="<?php print (!empty($aOptions['klicktippPassword'])) ? $aOptions['klicktippPassword'] : ""; ?>" /></td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;"><?php _e('Klick-Tipp Zugang Status', 'comment-list-builder'); ?></th>
+                    <td colspan="2"><?php echo $ktLoginStatus['text']; ?></td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;"><?php _e('Klick-Tipp OptIn-ID', 'comment-list-builder'); ?>:</th>
+                    <td><input type="number" name="klicktippOptInID" style="width: 85%" value="<?php print (!empty($aOptions['klicktippOptInID'])) ? $aOptions['klicktippOptInID'] : ""; ?>" /></td>
+                    <td><?php if(!empty($aOptions['klicktippOptInName'])) echo '&nbsp;(Bezeichnung: '.$aOptions['klicktippOptInName'].')'; ?></td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;"><?php _e('Klick-Tipp Tag', 'comment-list-builder'); ?>:</th>
+                    <td><input type="text" name="klicktippTag" style="width: 85%" value="<?php print (!empty($aOptions['klicktippTag'])) ? $aOptions['klicktippTag'] : ""; ?>" /><br /><?php _e('Bitte keine Sonderzeichen/Umlaute verwenden', 'comment-list-builder'); ?></td>
+                    <td><?php if(!empty($aOptions['klicktippTagID'])) echo '&nbsp;(Tag ID: '.$aOptions['klicktippTagID'].')'; ?></td>
+                </tr>
+            </table>
+            <div class="submit">
+                <input type="submit" name="update_klicktippListbuilding" value="<?php _e('Speichern', 'comment-list-builder'); ?>" />
+            </div>
+        </form>
+    </div>
+    <div class="col-fifty-fifty">
+        <h3><?php _e('Sie haben noch keinen Klick-Tipp Konto?', 'comment-list-builder'); ?></h3>
+        <p>
+            <a class="button" title="Klick-Tipp Account" href="https://www.splittest-club.com/club/splittest.php?test=13165" target="_blank" rel="nofollow"><?php _e('Neues Konto eröffnen', 'comment-list-builder'); ?></a>
+        </p>
+        <p>
+            <b><?php _e('Sonderangebot', 'comment-list-builder'); ?>:</b><br />
+            <?php _e('Extrem reduzierte Klick-Tipp Versionen<br />wenn Sie das Webinar (online Seminar) beenden.', 'comment-list-builder'); ?><br />
+            <a  class="button" title="Klick-Tipp Webinar" href="https://www.splittest-club.com/club/splittest.php?test=13168" target="_blank" rel="nofollow"><?php _e('Webinar ansehen und sparen', 'comment-list-builder'); ?></a>
+        </p>
+    </div>
+</div>

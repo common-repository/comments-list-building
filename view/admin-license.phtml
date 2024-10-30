@@ -1,0 +1,40 @@
+<h3><?php _e('Trage deine Lizenz hier ein', 'comment-list-builder'); ?>:</h3>
+<form action="<?php echo $_SERVER["REQUEST_URI"]; ?>" method="post">
+    <table class="form-table">
+        <tbody>
+            <tr>
+                <th scope="row">
+                    <label for="blogname"><?php _e('E-Mail', 'comment-list-builder'); ?></label>
+                </th>
+                <td>
+                    <input type="text" class="regular-text" name="license-email" value="<?php print (!empty($aOptions['listbuilder_license_email'])) ? $aOptions['listbuilder_license_email'] : ""; ?>" />
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label for="blogname"><?php _e('Lizenzschlüssel', 'comment-list-builder'); ?></label>
+                </th>
+                <td>
+                    <input type="text" class="regular-text" name="license-key" value="<?php print (!empty($aOptions['listbuilder_license_key'])) ? $aOptions['listbuilder_license_key'] : ""; ?>" />
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label for="blogname"><?php _e('Lizenz löschen', 'comment-list-builder'); ?></label>
+                </th>
+                <td>
+                    <input type="checkbox" class="" name="license-delete" />&nbsp; <?php _e('Option auswählen und Schaltfläche drücken</br> um den Lizenzschlüssel endgültig zu löschen.', 'comment-list-builder'); ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="submit">
+        <input type="submit" value="<?php _e('Lizenz speichern', 'comment-list-builder'); ?>" name="listbuilder_save_license" class="button-primary" />
+    </p>
+    <p class="submit">
+        <input type="submit" value="<?php _e('Lizenz auf dieser Domain aktivieren', 'comment-list-builder'); ?>" name="listbuilder_change_domain" class="button-secondary" />
+    </p>
+</form>
+<p class="description">
+    <?php echo sprintf(__('Hole dir hier eine <a href="%s" target="_blank">weitere Lizenz</a>.', 'comment-list-builder'), $this->getListbuilderPromoUrl()); ?>
+</p>

@@ -1,0 +1,221 @@
+﻿<?php
+wp_nonce_field( basename( __FILE__ ), 'kt_settings_meta_box_nonce' );
+$options = $this->getAdminOptions();
+
+if( ($this->is_edit_page('new')) || $no_licence){
+    $post_type = get_post_type( get_the_ID() );
+    $listbuilder_plugin_active = $options['clb_pt_'.$post_type] == 'TRUE' ? 'default' : '';
+    $klicktipp_additional_text = $options['klicktippAdditionalText'];
+    $klicktipp_checkbox_text = $options['klicktippCheckboxText'];
+    $klicktipp_checkbox_checked = $options['klicktippCheckboxChecked'];
+    $klicktipp_add_subscriber_without_release = $options['klicktippAddSubscriberWithoutRelease'];
+    $listbuilder_privacy_url = $options['listbuilder_privacy_url'];
+    $klicktipp_optin_id = $options['klicktippOptInID'];
+    $klicktipp_optin_name = $options['klicktippOptInName'];
+    $klicktipp_tag = $options['klicktippTag'];
+    $klicktipp_tag_id = $options['klicktippTagID'];
+    $autoresponder_code = $options['autoresponderCode'];
+    $autoresponder_url = $options['autoresponderUrl'];
+    $autoresponder_name = $options['autoresponderName'];
+    $autoresponder_email = $options['autoresponderEmail'];
+    $autoresponder_hidden = $options['autoresponderHidden'];
+} else {
+
+    $alistbuilder_plugin_active = get_post_meta($post->ID, '_listbuilder_plugin_active', null);
+    if(empty($alistbuilder_plugin_active)){
+        $listbuilder_plugin_active = 'default';
+    } else {
+        $listbuilder_plugin_active = $alistbuilder_plugin_active[0];
+    }
+    $klicktipp_additional_text = get_post_meta( $post->ID, '_klicktipp_additional_text', true );
+    $klicktipp_checkbox_text = get_post_meta( $post->ID, '_klicktipp_checkbox_text', true );
+    $klicktipp_checkbox_checked = get_post_meta( $post->ID, '_klicktipp_checkbox_checked', true );
+    $klicktipp_add_subscriber_without_release = get_post_meta( $post->ID, '_klicktipp_add_subscriber_without_release', true );
+    $listbuilder_privacy_url = get_post_meta( $post->ID, '_listbuilder_privacy_url', true );
+    $klicktipp_optin_id = get_post_meta( $post->ID, '_klicktipp_optin_id', true );
+    $klicktipp_optin_name = get_post_meta( $post->ID, '_klicktipp_optin_name', true );
+    $klicktipp_tag = get_post_meta( $post->ID, '_klicktipp_tag', true );
+    $klicktipp_tag_id = get_post_meta( $post->ID, '_klicktipp_tag_id', true ); 
+    $autoresponder_code = get_post_meta( $post->ID, '_autoresponder_code', true ); 
+    $autoresponder_url = get_post_meta( $post->ID, '_autoresponder_url', true ); 
+    $autoresponder_name = get_post_meta( $post->ID, '_autoresponder_name', true);
+    $autoresponder_email = get_post_meta( $post->ID, '_autoresponder_email', true); 
+    $autoresponder_hidden = get_post_meta( $post->ID, '_autoresponder_hidden', true);
+    if(empty($klicktipp_additional_text) && empty($klicktipp_checkbox_text) && empty($klicktipp_checkbox_checked) && empty($klicktipp_add_subscriber_without_release) && empty($listbuilder_privacy_url) && empty($klicktipp_optin_id) && empty($klicktipp_optin_name) && empty($klicktipp_tag) && empty($klicktipp_tag_id) && empty($autoresponder_code) && empty($autoresponder_url) && empty($autoresponder_name) && empty($autoresponder_email) && empty($autoresponder_hidden)) {
+            $klicktipp_additional_text = $options['klicktippAdditionalText'];
+            $klicktipp_checkbox_text = $options['klicktippCheckboxText'];
+            $klicktipp_checkbox_checked = $options['klicktippCheckboxChecked'];
+            $klicktipp_add_subscriber_without_release = $options['klicktippAddSubscriberWithoutRelease'];
+            $listbuilder_privacy_url = $options['listbuilder_privacy_url'];
+            $klicktipp_optin_id = $options['klicktippOptInID'];
+            $klicktipp_optin_name = $options['klicktippOptInName'];
+            $klicktipp_tag = $options['klicktippTag'];
+            $klicktipp_tag_id = $options['klicktippTagID'];
+            $autoresponder_code = $options['autoresponderCode'];
+            $autoresponder_url = $options['autoresponderUrl'];
+            $autoresponder_name = $options['autoresponderName'];
+            $autoresponder_email = $options['autoresponderEmail'];
+            $autoresponder_hidden = $options['autoresponderHidden'];
+    }
+}
+?>
+<div class="<?php if($no_licence == true){ echo "no-licence"; } else { echo "licence"; } ?>">
+<?php if($no_licence == true ){
+	echo '<div class="spanerror">' . sprintf(__('<p>Um bei jedem Beitrag die Kommentar-Box und Einstellungen zu verändern Erwerbe <a href="%s" target="_blank">hier</a> eine Premium Lizenz!</p>', 'comment-list-builder'), $this->getListbuilderPromoUrl()) . '</div>';
+}
+?>
+<h3><?php _e('Plugin aktivieren', 'comment-list-builder'); ?></h3>
+<select name="listbuilder-plugin-active" <?php if($no_licence == true){ echo "disabled"; }?>>
+        <option value="" <?php if ($listbuilder_plugin_active == '') { echo "selected"; } ?>>
+            <?php _e('>> Nicht aktiv <<', 'comment-list-builder'); ?>
+        </option>
+        <option value="default" <?php if ($listbuilder_plugin_active == 'default') { echo "selected"; } ?>>
+            <?php _e('Default', 'comment-list-builder'); ?>
+        </option>
+        <option value="klicktipp" <?php if ($listbuilder_plugin_active  == 'klicktipp') { echo "selected"; } ?>>
+            <?php _e('Klick-Tipp via API', 'comment-list-builder'); ?>
+        </option>
+        <option value="autoresponder" <?php if ($listbuilder_plugin_active == 'autoresponder') { echo "selected"; } ?>>
+            <?php _e('Senden via HTML Code', 'comment-list-builder'); ?>
+        </option>
+    </select>
+    <button class="button button-primary button-large" id="load_default_btn"><?php _e('Load Default', 'comment-list-builder'); ?></button>
+    <div class="klicktipp" style="display:<?php if ($listbuilder_plugin_active  == 'klicktipp') { echo "block"; } else { echo "none"; } ?>;">
+         <table class="form-table">
+            <tbody>
+                <tr>
+                    <th style="width: 240px;"><?php _e('Klick-Tipp OptIn-ID', 'comment-list-builder'); ?>:</th>
+                    <td><input type="number" name="klicktippOptInID" style="width: 85%" value="<?php print (!empty($klicktipp_optin_id)) ? $klicktipp_optin_id : ""; ?>" <?php if($no_licence == true){ echo "disabled"; }?>/></td>
+                    <td id="klicktipp_optin_name"><?php if(!empty($klicktipp_optin_name)) echo '&nbsp;(Bezeichnung: '.$klicktipp_optin_name.')'; ?></td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;"><?php _e('Klick-Tipp Tag', 'comment-list-builder'); ?>:</th>
+                    <td><input type="text" name="klicktippTag" style="width: 85%" value="<?php print (!empty($klicktipp_tag)) ? $klicktipp_tag : ""; ?>" <?php if($no_licence == true){ echo "disabled"; }?>/><br /><?php _e('Bitte keine Sonderzeichen/Umlaute verwenden', 'comment-list-builder'); ?></td>
+                    <td id="klicktipp_tag_id"><?php if(!empty($klicktipp_tag_id)) echo '&nbsp;(Tag ID: '.$klicktipp_tag_id.')'; ?></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="autoresponder" style="display:<?php if ($listbuilder_plugin_active  == 'autoresponder') { echo "block"; } else { echo "none"; } ?>;">
+        <table class="form-table">
+            <tbody>
+                <tr>
+                    <th style="width: 240px;" scope="row">
+                        <?php _e('HTML Eintragungscode', 'comment-list-builder'); ?>
+                    </th>
+                    <td>
+                        <textarea class="large-text" rows="10" cols="30" id="ar_code" name="ar_code" <?php if($no_licence == true){ echo "disabled"; }?>><?php if (isset($autoresponder_code)) { echo stripslashes($autoresponder_code); } ?></textarea>
+                        <div id="arcode_hdn_div"></div>
+                        <div id="arcode_hdn_div2"></div>
+                        <small><?php echo sprintf(__('Bitte füge hier nur HTML Formulare ein, kein Code mit iframe. Je einfach der Code desto besser.<br /><a href="%s" target="_blank">Hier</a> geht es zum Tutorial für die Erstellung deines Anmeldeformular Codes.', 'comment-list-builder'), 'http://woocommerce-klick-tipp.com/?p=1722' . $this->getAffiliateParameterString()); ?></small>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;" scope="row">
+                        <?php _e('URL', 'comment-list-builder'); ?>
+                    </th>
+                    <td>
+                        <input type="text" value="<?php if (isset($autoresponder_url)) { echo stripslashes($autoresponder_url); } ?>" class="large-text" id="ar_url" name="ar_url" <?php if($no_licence == true){ echo "disabled"; }?>><br>
+                        <small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;" scope="row">
+                        <?php _e('Namen', 'comment-list-builder'); ?>
+                    </th>
+                    <td>
+                        <input type="text" value="<?php if (isset($autoresponder_name)) { echo stripslashes($autoresponder_name); } ?>" class="regular-text" id="ar_name" name="ar_name" <?php if($no_licence == true){ echo "disabled"; }?>><br>
+                        <small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;" scope="row">
+                        <?php _e('E-Mail Feld', 'comment-list-builder'); ?>
+                    </th>
+                    <td>
+                        <input type="text" value="<?php if (isset($autoresponder_email)) { echo stripslashes($autoresponder_email); } ?>" class="regular-text" id="ar_email" name="ar_email" <?php if($no_licence == true){ echo "disabled"; }?>><br>
+                        <small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width: 240px;" scope="row">
+                        <?php _e('Nicht sichtbare Formularfelder', 'comment-list-builder'); ?>
+                    </th>
+                    <td>
+                        <textarea class="large-text" rows="10" cols="30" id="ar_hidden" name="ar_hidden" <?php if($no_licence == true){ echo "disabled"; }?>><?php if (isset($autoresponder_hidden)) { echo stripslashes($autoresponder_hidden); } ?></textarea><br>
+                        <small><?php _e('Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode einfügst.', 'comment-list-builder'); ?></small>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="general_settings" style="display:<?php if ($listbuilder_plugin_active  == '') { echo "none"; } else { echo "block"; } ?>;">
+        <table class="form-table">
+            <tr>
+                <th style="width: 240px;"><?php _e('Zusatztext', 'comment-list-builder'); ?>:</th>
+                <td><?php if($no_licence){ ?><div class="editor-no-license"><?php echo $klicktipp_additional_text; ?></div><?php } else { wp_editor((!empty($klicktipp_additional_text)) ? $klicktipp_additional_text : "", 'klicktippAdditionalText'); } ?></td>
+            </tr>
+            <tr>
+                <th style="width: 240px;"><?php _e('Beschreibungstext der Tickbox', 'comment-list-builder'); ?>:</th>
+                <td><input type="text" name="klicktippCheckboxText" style="width: 100%;" value="<?php print (!empty($klicktipp_checkbox_text)) ? $klicktipp_checkbox_text : ""; ?>" <?php if($no_licence == true){ echo "disabled"; }?>/></td>
+            </tr>
+            <tr>
+                <th style="width: 240px;"><?php _e('Tickbox vorausgewählt', 'comment-list-builder'); ?>:</th>
+                <td><input type="checkbox" name="klicktippCheckboxChecked" <?php echo ($klicktipp_checkbox_checked==TRUE ? 'checked="checked" ' : ''); ?> value="TRUE" <?php if($no_licence == true){ echo "disabled"; }?>/></td>
+            </tr>
+            <tr>
+                <th style="width: 240px;"><?php _e('Kontakt ohne Genehmigung des Kommentars zu Klick-Tipp übertragen', 'comment-list-builder'); ?>:</th>
+                <td><input type="checkbox" name="klicktippAddSubscriberWithoutRelease" <?php echo ($klicktipp_add_subscriber_without_release==TRUE ? 'checked="checked" ' : ''); ?> value="TRUE" <?php if($no_licence == true){ echo "disabled"; }?>/></td>
+            </tr>
+            <tr>
+                <th style="width: 240px;"><?php _e('Link zum Datenschutz', 'comment-list-builder'); ?>:</th>
+                <td><input type="text" name="privacy-url" style="width: 100%;" value="<?php print (!empty($listbuilder_privacy_url)) ? $listbuilder_privacy_url : ""; ?>" <?php if($no_licence == true){ echo "disabled"; }?>/></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery( document ).ready(function() {
+        jQuery('#load_default_btn').hide();
+        if(jQuery('select[name=listbuilder-plugin-active]').val() == 'klicktipp' || jQuery(this).val() == 'autoresponder') {
+            jQuery('#load_default_btn').show();
+        }
+        jQuery('select[name=listbuilder-plugin-active]').on('change', function(){
+            if(jQuery(this).val() == 'klicktipp' || jQuery(this).val() == 'autoresponder') {
+                jQuery('#load_default_btn').show();
+            } else {
+            	jQuery('#load_default_btn').hide();
+            }
+        });
+        jQuery('#load_default_btn').on('click', function(event) {
+            event.preventDefault();
+            var value = jQuery('select[name=listbuilder-plugin-active]').val();
+            if(value == 'klicktipp') {
+                jQuery('input[name=klicktippOptInID]').val('<?php echo $options['klicktippOptInID']; ?>');
+                jQuery('#klicktipp_optin_name').html('<?php if(!empty($options['klicktippOptInName'])) echo '&nbsp;(Bezeichnung: '.$options['klicktippOptInName'].')'; ?>');
+                jQuery('input[name=klicktippTag]').val('<?php echo $options['klicktippTag']; ?>');
+                jQuery('#klicktipp_tag_id').html('<?php if(!empty($options['klicktippTagID'])) echo '&nbsp;(Tag ID: '.$options['klicktippTagID'].')'; ?>');
+            }
+            if(value == 'autoresponder') {
+                jQuery('#ar_code').val('<?php echo preg_replace( "/\r|\n/", "", $options['autoresponderCode']); ?>');
+                jQuery('#ar_url').val('<?php echo $options['autoresponderUrl']; ?>');
+                jQuery('#ar_name').val('<?php echo $options['autoresponderName']; ?>');
+                jQuery('#ar_email').val('<?php echo $options['autoresponderEmail']; ?>');
+                jQuery('#ar_hidden').val('<?php echo $options['autoresponderHidden']; ?>');
+            }
+            if(value == 'klicktipp' || value == 'autoresponder') {
+                if( typeof tinymce != "undefined" ) {
+                    var editor = tinymce.get( 'klicktippAdditionalText' );
+                    if( editor && editor instanceof tinymce.Editor ) {
+                        var content = '<?php echo preg_replace( "/\r|\n/", "", $options['klicktippAdditionalText']); ?>';
+                        editor.setContent( content, {format : 'html'} );
+                    }
+                }
+                jQuery('input[name=klicktippCheckboxText]').val('<?php echo $options['klicktippCheckboxText']; ?>');
+                jQuery('input[name=klicktippCheckboxChecked]').prop( "checked", <?php echo ($options['klicktippCheckboxChecked']==TRUE ? 'true' : 'false'); ?> );
+                jQuery('input[name=klicktippAddSubscriberWithoutRelease]').prop( "checked", <?php echo ($options['klicktippAddSubscriberWithoutRelease']==TRUE ? 'true' : 'false'); ?> );
+                jQuery('input[name=privacy-url]').val('<?php echo $options['listbuilder_privacy_url']; ?>');
+            }
+        });
+    });
+</script>

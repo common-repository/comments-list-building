@@ -1,0 +1,404 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Comment List-Builder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-24 00:11+0200\n"
+"PO-Revision-Date: 2017-04-24 00:26+0200\n"
+"Last-Translator: Tobias Conrad <tobiasconrad@leupus.de>\n"
+"Language-Team: English (USA)\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Source-Locale: de_AT\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: en_US\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../inc/klick-tipp-listbuilding.class.php:256 ../view/admin-settings.phtml:2
+msgid "Einstellungen"
+msgstr "Settings"
+
+#: ../inc/klick-tipp-listbuilding.class.php:400
+msgid "Einstellung"
+msgstr "Settings"
+
+#: ../inc/klick-tipp-listbuilding.class.php:402
+msgid "Klick-Tipp API"
+msgstr "Klick-Tipp API"
+
+#: ../inc/klick-tipp-listbuilding.class.php:404
+msgid "Autoresponder"
+msgstr "Autoresponder"
+
+#: ../inc/klick-tipp-listbuilding.class.php:406
+msgid "Lizenz"
+msgstr "License"
+
+#: ../inc/klick-tipp-listbuilding.class.php:466
+msgid "15036"
+msgstr "15373"
+
+#: ../inc/klick-tipp-listbuilding.class.php:589
+#: ../inc/klick-tipp-listbuilding.class.php:820
+#: ../inc/klick-tipp-listbuilding.class.php:844
+#: ../inc/klick-tipp-listbuilding.class.php:992
+#: ../inc/klick-tipp-listbuilding.class.php:1360
+msgid "Hinweis: Die Einstellungen wurden erfolgreich gespeichert."
+msgstr "Note: The settings were saved successfully."
+
+#: ../inc/klick-tipp-listbuilding.class.php:605
+msgid "Newsletter abonnieren"
+msgstr "Subscribe to our newsletter"
+
+#: ../inc/klick-tipp-listbuilding.class.php:652
+msgid "Beitrags-Einstellungen für das Wordpress Comments List Building Plugin"
+msgstr "Post settings for the WordPress comments list building plugin"
+
+#: ../inc/klick-tipp-listbuilding.class.php:894
+msgid "Deutschland"
+msgstr "Germany"
+
+#: ../inc/klick-tipp-listbuilding.class.php:900
+msgid "Brasilien"
+msgstr "Brasil"
+
+#: ../inc/klick-tipp-listbuilding.class.php:1024
+msgid "OptIn ID scheint bei Klick-Tipp nicht zu existieren. Bitte prüfen!"
+msgstr "Opt-In ID does not exist in Klick-Tipp. Please check!"
+
+#: ../inc/klick-tipp-listbuilding.class.php:1032
+msgid "Fehler: F&uuml;llen Sie bitte alle Felder korrekt aus."
+msgstr "Please complete all the fields correctly."
+
+#: ../inc/klick-tipp-listbuilding.class.php:1274
+#: ../inc/klick-tipp-listbuilding.class.php:1340
+msgid "Fehler: Bitte gebe deine E-Mail Adresse ein"
+msgstr "Error: Please enter your email address"
+
+#: ../inc/klick-tipp-listbuilding.class.php:1278
+#: ../inc/klick-tipp-listbuilding.class.php:1344
+msgid "Fehler: Bitte gebe deinen Lizenzschlüssel ein"
+msgstr "Error: Please enter your license key"
+
+#: ../inc/klick-tipp-listbuilding.class.php:1302
+msgid "Hinweis: Die Lizenz wurde auf dieser Domain umgezogen."
+msgstr "Note: The license was moved to current domain."
+
+#: ../inc/klick-tipp-listbuilding.class.php:1306
+msgid "Fehler: Die Lizenz konnte nicht auf dieser Domain umgezogen werden."
+msgstr "Error: The license could not be moved on this domain."
+
+#: ../inc/klick-tipp-listbuilding.class.php:1314
+msgid "Fehler: Die Lizenz konnte nicht auf die neue Domain umgezogen werden."
+msgstr "Error: The license could not be moved to the new domain."
+
+#: ../inc/klick-tipp-listbuilding.class.php:1368
+msgid "Fehler: Die angegebenen Lizenzdaten sind falsch"
+msgstr "Error: The entered license data is incorrect"
+
+#: ../inc/klick-tipp-listbuilding.class.php:1372
+#, php-format
+msgid ""
+"<p>Lizenz wurde auf der Domain \"%s\" aktiviert.</p><p>Zum Umziehen der "
+"Lizenz bitte Lizenzdaten eingeben und \"Lizenz auf dieser Domain aktivieren"
+"\" klicken.</p>"
+msgstr ""
+"<p> License has been applied to the domain \"%s\". </p><p> To move the "
+"license enter license data and hit \"Activate license on this domain\" "
+"button. </p>"
+
+#: ../inc/klick-tipp-listbuilding.class.php:1392
+msgid "Hinweis: Lizenz wurde erfolgreich gelöscht."
+msgstr "Note: License has been deleted successfully."
+
+#: ../inc/klick-tipp-listbuilding.class.php:1452
+msgid "Ihre KT Zugangsdaten sind nicht gültig."
+msgstr "Your Klick-Tipp credentials are not valid."
+
+#: ../inc/klick-tipp-listbuilding.class.php:1460
+msgid "Daten im Autoresponder fehlen."
+msgstr "Data in autoresponder is missing."
+
+#: ../inc/klick-tipp-listbuilding.class.php:1493
+#: ../inc/klick-tipp-listbuilding.class.php:1501
+msgid "<p><b>"
+msgstr ""
+"<p> <b>Thank you for your using the WP Comment List Builder plugins.</b> </"
+"p><p> Please configure<a href=\"options-general.php?page=listbuilding\"> "
+"settings</a> so the visitors see something. </p>"
+
+#: ../inc/klick-tipp-listbuilding.class.php:1529
+#, php-format
+msgid ""
+"<p><b>%s</b></p><p>Daten im Autoresponder fehlen. <a href=\"options-general."
+"php?page=listbuilding&tab=autoresponder\">Einstellungen prüfen</a></p>"
+msgstr ""
+"<p> <b>%s</b> </p><p> Data in autoresponder missing. <a href=\"options-"
+"general.php?page=listbuilding&tab=autoresponder\">Check settings</a> </p>"
+
+#: ../inc/klick-tipp-listbuilding.class.php:1535
+msgid ""
+"<p><b>Danke für Deine Nutzung des WP Comment List Builder Plugins.</b></"
+"p><p>Bitte nehme hier die ersten <a href=\"options-general.php?"
+"page=listbuilding\">Einstellungen vor</a>, damit den Besuchern etwas "
+"angezeigt wird.</p>"
+msgstr ""
+"<p> <b>Thank you for your using the WP Comment List Builder plugins.</b> </"
+"p><p> Please configure<a href=\"options-general.php?page=listbuilding\"> "
+"settings</a> so the visitors see something. </p>"
+
+#: ../inc/klick-tipp-listbuilding.class.php:1582
+#, php-format
+msgid "Zugangsdaten sind gültig (nächste Prüfung erfolgt am %s)."
+msgstr "Credentials are valid (next test: %s)."
+
+#: ../inc/klick-tipp-listbuilding.class.php:1596
+msgid "Keine Verbindung zum Klick-Tipp Server oder Zugangsdaten sind ungültig."
+msgstr "Unable to connect to the Klick-Tipp server or credentials are invalid."
+
+#: ../inc/klick-tipp-listbuilding.class.php:1642
+msgid "Zugangsdaten sind nicht gültig"
+msgstr "Your credentials are not valid"
+
+#: ../inc/klick-tipp-listbuilding.class.php:2161
+#, php-format
+msgid "Wir halten uns an den <a href=\"%s\" target=\"_blank\">Datenschutz</a>."
+msgstr "We follow the <a href=\"%s\" target=\"_blank\">privacy policy</a>."
+
+#: ../view/admin-autoresponder.phtml:2
+msgid "Autoresponders Optionen"
+msgstr "Autoresponders options"
+
+#: ../view/admin-autoresponder.phtml:7 ../view/meta-box-settings.phtml:103
+msgid "HTML Eintragungscode"
+msgstr "HTML subscription form code"
+
+#: ../view/admin-autoresponder.phtml:13 ../view/meta-box-settings.phtml:109
+#, php-format
+msgid ""
+"Bitte füge hier nur HTML Formulare ein, kein Code mit iframe. Je einfach der "
+"Code desto besser.<br /><a href=\"%s\" target=\"_blank\">Hier</a> geht es "
+"zum Tutorial für die Erstellung deines Anmeldeformular Codes."
+msgstr ""
+"Please paste only HTML forms a, no code with iframe. More simple code the "
+"better. <br /> <a href=\"%s\" target=\"_blank\">Here</a> you can access the "
+"tutorial for creating your simple signup from code."
+
+#: ../view/admin-autoresponder.phtml:18 ../view/meta-box-settings.phtml:114
+msgid "URL"
+msgstr "URL"
+
+#: ../view/admin-autoresponder.phtml:22 ../view/admin-autoresponder.phtml:31
+#: ../view/admin-autoresponder.phtml:40 ../view/admin-autoresponder.phtml:49
+#: ../view/meta-box-settings.phtml:118 ../view/meta-box-settings.phtml:127
+#: ../view/meta-box-settings.phtml:136 ../view/meta-box-settings.phtml:145
+msgid ""
+"Dieses Feld sollte automatisch ausgefüllt werden, wenn Du den Formularcode "
+"einfügst."
+msgstr ""
+"This field should be filled automatically when you insert the form code."
+
+#: ../view/admin-autoresponder.phtml:27 ../view/meta-box-settings.phtml:123
+msgid "Namen"
+msgstr "Name field"
+
+#: ../view/admin-autoresponder.phtml:36 ../view/meta-box-settings.phtml:132
+msgid "E-Mail Feld"
+msgstr "Email field"
+
+#: ../view/admin-autoresponder.phtml:45 ../view/meta-box-settings.phtml:141
+msgid "Nicht sichtbare Formularfelder"
+msgstr "Not visible form fields"
+
+#: ../view/admin-autoresponder.phtml:56
+msgid "Reset"
+msgstr "Reset"
+
+#: ../view/admin-klicktipp.phtml:4
+msgid "Einstellungen in Klick-Tipp"
+msgstr "Settings for Klick-Tipp"
+
+#: ../view/admin-klicktipp.phtml:8
+msgid "API"
+msgstr "API"
+
+#: ../view/admin-klicktipp.phtml:21
+msgid "Klick-Tipp Benutzer"
+msgstr "Klick-Tipp user"
+
+#: ../view/admin-klicktipp.phtml:25
+msgid "Klick-Tipp Kennwort"
+msgstr "Klick-Tipp password"
+
+#: ../view/admin-klicktipp.phtml:29
+msgid "Klick-Tipp Zugang Status"
+msgstr "Klick-Tipp connection status"
+
+#: ../view/admin-klicktipp.phtml:33 ../view/meta-box-settings.phtml:86
+msgid "Klick-Tipp OptIn-ID"
+msgstr "Klick-Tipp Opt-In ID"
+
+#: ../view/admin-klicktipp.phtml:38 ../view/meta-box-settings.phtml:91
+msgid "Klick-Tipp Tag"
+msgstr "Klick-Tipp Tag"
+
+#: ../view/admin-klicktipp.phtml:39 ../view/meta-box-settings.phtml:92
+msgid "Bitte keine Sonderzeichen/Umlaute verwenden"
+msgstr "Please do not use special characters/umlauts"
+
+#: ../view/admin-klicktipp.phtml:44 ../view/admin-settings.phtml:68
+msgid "Speichern"
+msgstr "Save"
+
+#: ../view/admin-klicktipp.phtml:49
+msgid "Sie haben noch keinen Klick-Tipp Konto?"
+msgstr "You don’t have an Klick-Tipp Account?"
+
+#: ../view/admin-klicktipp.phtml:51
+msgid "Neues Konto eröffnen"
+msgstr "Create an account"
+
+#: ../view/admin-klicktipp.phtml:54
+msgid "Sonderangebot"
+msgstr "Special offer"
+
+#: ../view/admin-klicktipp.phtml:55
+msgid ""
+"Extrem reduzierte Klick-Tipp Versionen<br />wenn Sie das Webinar "
+"(online Seminar) beenden."
+msgstr ""
+"Extremely reduced Klick-Tipp offer<br>If you finish the Webinar (online "
+"seminar)."
+
+#: ../view/admin-klicktipp.phtml:56
+msgid "Webinar ansehen und sparen"
+msgstr "Watch Webinar and save money"
+
+#: ../view/admin-license.phtml:1
+msgid "Trage deine Lizenz hier ein"
+msgstr "Enter your license here"
+
+#: ../view/admin-license.phtml:7
+msgid "E-Mail"
+msgstr "Email"
+
+#: ../view/admin-license.phtml:15
+msgid "Lizenzschlüssel"
+msgstr "License Key"
+
+#: ../view/admin-license.phtml:23
+msgid "Lizenz löschen"
+msgstr "Delete License"
+
+#: ../view/admin-license.phtml:26
+msgid ""
+"Option auswählen und Schaltfläche drücken</br> um den Lizenzschlüssel "
+"endgültig zu löschen."
+msgstr ""
+"Select the option and press button<br>to permanently delete the license key."
+
+#: ../view/admin-license.phtml:32
+msgid "Lizenz speichern"
+msgstr "Save License"
+
+#: ../view/admin-license.phtml:35
+msgid "Lizenz auf dieser Domain aktivieren"
+msgstr "Activate License on this domain"
+
+#: ../view/admin-license.phtml:39
+#, php-format
+msgid "Hole dir hier eine <a href=\"%s\" target=\"_blank\">weitere Lizenz</a>."
+msgstr "Get an <a href=\"%s\" target=\"_blank\">additional license here</a>."
+
+#: ../view/admin-settings.phtml:11
+#, php-format
+msgid ""
+"Bitte schau Dir hierzu das <a href=\"%s\" target=\"_blank\" title=\"Vorlagen"
+"\">Quickstart Video</a> an."
+msgstr ""
+"Please have look at our <a href=\"%s\" target=\"_blank\" title=\"Quick Start "
+"Guide\">Quick Start Guide</a>."
+
+#: ../view/admin-settings.phtml:14
+msgid ""
+" Um bei jedem Beitrag die Kommentar-Box und Einstellungen zu verändern "
+"Erwerbe hier eine Premium Lizenz!"
+msgstr ""
+" To change settings at every single post, please purchase a premium license "
+"here!"
+
+#: ../view/admin-settings.phtml:16
+msgid "Erwerbe hier eine weitere Lizenz!"
+msgstr "Get an additional license here!"
+
+#: ../view/admin-settings.phtml:21 ../view/meta-box-settings.phtml:66
+msgid "Plugin aktivieren"
+msgstr "Activate plugin"
+
+#: ../view/admin-settings.phtml:24 ../view/meta-box-settings.phtml:69
+msgid ">> Nicht aktiv <<"
+msgstr ">> not active <<"
+
+#: ../view/admin-settings.phtml:27 ../view/meta-box-settings.phtml:75
+msgid "Klick-Tipp via API"
+msgstr "Klick-Tipp API"
+
+#: ../view/admin-settings.phtml:30 ../view/meta-box-settings.phtml:78
+msgid "Senden via HTML Code"
+msgstr "Send via HTML code"
+
+#: ../view/admin-settings.phtml:34
+msgid "Standard Einstellungen für die Kommentar-Box"
+msgstr "Default Settings for Comment-Box"
+
+#: ../view/admin-settings.phtml:37 ../view/meta-box-settings.phtml:154
+msgid "Zusatztext"
+msgstr "Additional Text"
+
+#: ../view/admin-settings.phtml:41 ../view/meta-box-settings.phtml:158
+msgid "Beschreibungstext der Tickbox"
+msgstr "Description of the tick box"
+
+#: ../view/admin-settings.phtml:45 ../view/meta-box-settings.phtml:162
+msgid "Tickbox vorausgewählt"
+msgstr "Tick box is preselected"
+
+#: ../view/admin-settings.phtml:49 ../view/meta-box-settings.phtml:166
+msgid "Kontakt ohne Genehmigung des Kommentars zu Klick-Tipp übertragen"
+msgstr ""
+"Transfer contact to Klick-Tipp or Autoresponder without proving the comment"
+
+#: ../view/admin-settings.phtml:53 ../view/meta-box-settings.phtml:170
+msgid "Link zum Datenschutz"
+msgstr "Link to privacy policy"
+
+#: ../view/admin-settings.phtml:57
+msgid "Zeige hier den standard teaser"
+msgstr "Show the standard teaser here"
+
+#: ../view/meta-box-settings.phtml:63
+#, php-format
+msgid ""
+"<p>Um bei jedem Beitrag die Kommentar-Box und Einstellungen zu verändern "
+"Erwerbe <a href=\"%s\" target=\"_blank\">hier</a> eine Premium Lizenz!</p>"
+msgstr ""
+"<p>To change the comment box and settings for each contribution purchases <a "
+"href=\"%s\" target=\"_blank\">here</a> is a premium license!</p>"
+
+#: ../view/meta-box-settings.phtml:72
+msgid "Default"
+msgstr "Default"
+
+#: ../view/meta-box-settings.phtml:81
+msgid "Load Default"
+msgstr "Load default"

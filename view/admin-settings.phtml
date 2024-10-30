@@ -1,0 +1,81 @@
+﻿<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+    <h3><?php _e('Einstellungen', 'comment-list-builder'); ?></h3>
+    <?php
+        $quickstartLink = 'http://saleswonder.biz/filter/?_sft_category=blog&aff=';
+        if (defined('COMMENT_LIST_BUILDER_AFFILIATE')) { $quickstartLink .= COMMENT_LIST_BUILDER_AFFILIATE; }
+        $quickstartLink .= '&affiliate=';
+        if (defined('COMMENT_LIST_BUILDER_AFFILIATE')) { $quickstartLink .= COMMENT_LIST_BUILDER_AFFILIATE; }
+        $quickstartLink .= '&campaign=';
+        if (defined('COMMENT_LIST_BUILDER_CAMPAIGNKEY')) { $quickstartLink .= COMMENT_LIST_BUILDER_CAMPAIGNKEY; }
+    ?>
+    <p><?php echo sprintf(__('Bitte schau Dir hierzu das <a href="%s" target="_blank" title="Vorlagen">Quickstart Video</a> an.', 'comment-list-builder'), $quickstartLink); ?></p>
+    <p>
+        <?php if($no_licence) { ?>
+            <a href="<?php echo $licensePromoUrl; ?>" target="_blank"><?php _e(' Um bei jedem Beitrag die Kommentar-Box und Einstellungen zu verändern Erwerbe hier eine Premium Lizenz!', 'comment-list-builder'); ?></a>
+        <?php } else { ?>
+            <a href="<?php echo $licensePromoUrl; ?>" target="_blank"><?php _e('Erwerbe hier eine weitere Lizenz!', 'comment-list-builder'); ?></a>
+        <?php } ?>
+        
+    </p>
+    <hr />
+    <h3><?php _e('Plugin aktivieren', 'comment-list-builder'); ?></h3>
+    <select name="plugin-activate">
+        <option value="" <?php if ($aOptions['listbuilder-plugin-active'] == '') { echo "selected"; } ?>>
+            <?php _e('>> Nicht aktiv <<', 'comment-list-builder'); ?>
+        </option>
+        <option value="klicktipp" <?php if ($aOptions['listbuilder-plugin-active'] == 'klicktipp') { echo "selected"; } ?>>
+            <?php _e('Klick-Tipp via API', 'comment-list-builder'); ?>
+        </option>
+        <option value="autoresponder" <?php if ($aOptions['listbuilder-plugin-active'] == 'autoresponder') { echo "selected"; } ?>>
+            <?php _e('Senden via HTML Code', 'comment-list-builder'); ?>
+        </option>
+    </select>
+    <hr />
+    <h3><?php _e('Standard Einstellungen für die Kommentar-Box', 'comment-list-builder'); ?></h3>
+    <table class="form-table">
+        <tr>
+            <th style="width: 240px;"><?php _e('Zusatztext', 'comment-list-builder'); ?>:</th>
+            <td><?php wp_editor((!empty($aOptions['klicktippAdditionalText'])) ? $aOptions['klicktippAdditionalText'] : "", 'klicktippAdditionalText'); ?></td>
+        </tr>
+        <tr>
+            <th style="width: 240px;"><?php _e('Beschreibungstext der Tickbox', 'comment-list-builder'); ?>:</th>
+            <td><input type="text" name="klicktippCheckboxText" style="width: 100%;" value="<?php print (!empty($aOptions['klicktippCheckboxText'])) ? $aOptions['klicktippCheckboxText'] : ""; ?>" /></td>
+        </tr>
+        <tr>
+            <th style="width: 240px;"><?php _e('Tickbox vorausgewählt', 'comment-list-builder'); ?>:</th>
+            <td><input type="checkbox" name="klicktippCheckboxChecked" <?php echo ($aOptions['klicktippCheckboxChecked']==TRUE ? 'checked="checked" ' : ''); ?> value="TRUE" /></td>
+        </tr>
+        <tr>
+            <th style="width: 240px;"><?php _e('Kontakt ohne Genehmigung des Kommentars zu Klick-Tipp übertragen', 'comment-list-builder'); ?>:</th>
+            <td><input type="checkbox" name="klicktippAddSubscriberWithoutRelease" <?php echo ($aOptions['klicktippAddSubscriberWithoutRelease']==TRUE ? 'checked="checked" ' : ''); ?> value="TRUE" /></td>
+        </tr>
+        <tr>
+            <th style="width: 240px;"><?php _e('Link zum Datenschutz', 'comment-list-builder'); ?>:</th>
+            <td><input type="text" name="privacy-url" style="width: 100%;" value="<?php print (!empty($aOptions['listbuilder_privacy_url'])) ? $aOptions['listbuilder_privacy_url'] : ""; ?>" /></td>
+        </tr>
+    </table>
+    <h3><?php _e('Default Eintellungen dieser Post-Types vorauswählen', 'comment-list-builder'); ?></h3>
+    <table class="form-table">
+        <?php
+        foreach ( $post_types   as $k => $post_type ) { ?>
+        <tr>
+            <th style="width: 240px;"><?php echo $post_type->label; ?></th>
+            <td><input type="checkbox" name="clb_pt_<?php echo $post_type->name; ?>" <?php echo array_key_exists('clb_pt_'.$post_type->name, $aOptions) ? ($aOptions['clb_pt_'.$post_type->name]==TRUE ? 'checked="checked" ' : '') : ''; ?> value="TRUE" /></td>
+        </tr>
+        <?php } ?>
+    </table>
+    <h3><?php _e('Default Reset', 'comment-list-builder'); ?></h3>
+    <table class="form-table">
+        <?php
+        foreach ( $post_types   as $k => $post_type ) { ?>
+        <tr>
+            <th style="width: 240px;"><?php echo $post_type->label; ?></th>
+            <td><input type="checkbox" name="clb_pr_<?php echo $post_type->name; ?>" <?php echo array_key_exists('clb_pr_'.$post_type->name, $aOptions) ? ($aOptions['clb_pr_'.$post_type->name]==TRUE ? 'checked="checked" ' : '') : ''; ?> value="TRUE" /></td>
+        </tr>
+        <?php } ?>
+    </table>
+    </table>
+    <div class="submit">
+        <input type="submit" name="update_klicktippListbuilding" value="<?php _e('Speichern', 'comment-list-builder'); ?>" />
+    </div>
+</form>

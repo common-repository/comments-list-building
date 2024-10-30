@@ -1,0 +1,44 @@
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+/** **/
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.col-fifty-fifty {
+  width: 50%;
+  float: left;
+}
+
+.no-licence h3, .no-licence .form-table th {
+  color: #929292;
+}
+.editor-no-license {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    background: rgba( 255, 255, 255, 0.5 );
+    border-color: rgba( 222, 222, 222, 0.75 );
+    -webkit-box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.04 );
+    box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.04 );
+    color: rgba( 51, 51, 51, 0.5 );
+}
+.editor-no-license img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+.spanerror p {
+  color: #ff0000;
+}
